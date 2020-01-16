@@ -10,7 +10,7 @@ Unofficial client for PONS online dictionary
 
 ## Description
 
-Translates words and finds example-sentences.
+Translates words scraping https://en.pons.com/ in the background.
 
 Supported languages:
 ```
@@ -50,12 +50,11 @@ pip install ponstrans
 >>> translations = translate(word="hallo", source_language="de", target_language="en")
 >>> translations[:2]
 [{'source': 'hallo', 'target': 'hello'}, {'source': 'hallo (zur Begrüßung)', 'target': 'hi'}]
->>> find_examples("leben", "de", "es")
-[{'source': 'jdm das Leben verlängern', 'target': 'alargar la vida de alguien'}, {'source': 'ein schweres Leben haben', 'target': 'tener una vida dura'}, {'source': 'in beständiger Angst leben', 'target': 'vivir con miedo permanente'}]
 ```
 
 Note
 ====
 
-This project has been set up using PyScaffold 3.2.3. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
+The performance is quite bad because it scrapes the whole
+html page in the background. Use the official (paid) API for better performance:
+https://en.pons.com/p/online-dictionary/developers/api

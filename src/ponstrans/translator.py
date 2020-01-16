@@ -39,13 +39,6 @@ class PONS:
         query_url = url.replace("q=", f"q={word}")
         return self.scrape_translations(query_url)[1:]
 
-    def find_examples(self, word, source_lang, target_lang):
-        url = self.find_url(source_lang, target_lang) + "#examples"
-        query_url = url.replace("q=", f"q={word}")
-        translations_examples = self.scrape_translations(query_url)[1:]
-        translations = self.translate(word, source_lang, target_lang)
-        return [pair for pair in translations_examples if pair not in translations]
-
     def find_url(self, source, target):
         found = [pair for pair in pairs if pair["source"] == source and pair["target"] == target]
         if len(found):
