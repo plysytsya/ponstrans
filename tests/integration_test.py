@@ -1,14 +1,11 @@
 import unittest
-from ponstrans.translator import PONS
+from ponstrans import translate
 
 
 class TestPONS(unittest.TestCase):
 
-    def setUp(self):
-        self.pons = PONS()
-
     def test_translate(self):
-        translations = self.pons.translate("hello", "en", "de")
+        translations = translate("hello", "en", "de")
         self.assertTrue(len(translations))
 
 
