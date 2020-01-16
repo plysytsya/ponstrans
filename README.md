@@ -46,7 +46,7 @@ pip install ponstrans
 ## Usage
 
 ```
->>> from ponstrans import translate, find_examples
+>>> from ponstrans import translate
 >>> translations = translate(word="hallo", source_language="de", target_language="en")
 >>> translations[:2]
 [{'source': 'hallo', 'target': 'hello'}, {'source': 'hallo (zur Begrüßung)', 'target': 'hi'}]
