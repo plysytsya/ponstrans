@@ -37,12 +37,12 @@ class PONS:
     def translate(self, word, source_lang, target_lang):
         url = self.find_url(source_lang, target_lang)
         query_url = url.replace("q=", f"q={word}")
-        return self.scrape_translations(query_url)
+        return self.scrape_translations(query_url)[1:]
 
     def find_examples(self, word, source_lang, target_lang):
         url = self.find_url(source_lang, target_lang) + "#examples"
         query_url = url.replace("q=", f"q={word}")
-        translations_examples = self.scrape_translations(query_url)
+        translations_examples = self.scrape_translations(query_url)[1:]
         translations = self.translate(word, source_lang, target_lang)
         return [pair for pair in translations_examples if pair not in translations]
 
@@ -65,7 +65,7 @@ class PONS:
             target_text = target.get_text().replace('\n', '').rstrip()
             if {"source": source_text, "target": target_text} not in translations:
                 translations.append({"source": source_text, "target": target_text})
-        return translations[1:]  # removes dupes and drops first item
+        return translations  # removes dupes and drops first item
 
 
 if __name__ == "__main__":
