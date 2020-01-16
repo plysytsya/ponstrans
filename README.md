@@ -1,4 +1,4 @@
-![GitHub Actions status | sdras/awesome-actions](https://github.com/plysytsya/ponstrans/workflows/CI/badge.svg)
+![GitHub Actions status | sdras/awesome-actions](https://github.com/plysytsya/ponstrans/workflows/tests/badge.svg)
 [![codecov](https://codecov.io/gh/plysytsya/ponstrans/branch/master/graph/badge.svg)](https://codecov.io/gh/plysytsya/ponstrans/branch/master/graph/badge.svg)
 ![PyPI](https://img.shields.io/pypi/v/ponstrans)
 
