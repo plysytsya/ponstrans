@@ -1,6 +1,13 @@
 name: tests
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
 
 jobs:
   build:
