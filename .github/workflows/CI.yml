@@ -2,12 +2,6 @@ name: tests
 
 on:
   push:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Frontend-image tag. staging for dev or latest for app'
-        required: true
-        default: 'staging'
 
 jobs:
   build:
